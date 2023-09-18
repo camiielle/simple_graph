@@ -14,7 +14,7 @@ string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG " -fsanitize=address -fno-omit-frame-
 
 add_executable(graph source/main.cpp source/graph.cpp)
 add_subdirectory(Lyra)
-target_link_libraries(boids PRIVATE bfg::lyra)
+target_link_libraries(graph PRIVATE bfg::lyra)
 
 # to disable testing, pass -DBUILD_TESTING=OFF to cmake during the configuration phase
 if (BUILD_TESTING)
