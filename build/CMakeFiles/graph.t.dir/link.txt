@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -Wextra -g -fsanitize=address -fno-omit-frame-pointer   -fsanitize=address -fno-omit-frame-pointer CMakeFiles/graph.t.dir/source/graph.test.cpp.o  -o graph.t 
