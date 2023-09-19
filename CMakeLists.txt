@@ -19,7 +19,7 @@ target_link_libraries(graph PRIVATE bfg::lyra)
 # to disable testing, pass -DBUILD_TESTING=OFF to cmake during the configuration phase
 if (BUILD_TESTING)
 
- add_executable(graph.t source/graph.test.cpp)
+ add_executable(graph.t source/graph.test.cpp source/graph.cpp)
 
  add_test(NAME graph.t COMMAND graph.t)
 
