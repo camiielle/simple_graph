@@ -40,37 +40,78 @@ TEST_CASE("testing Graph") {
     CHECK(g2[6] == std::vector<int>{5});
   }
 
-  SUBCASE("testing bfs") {
-    SUBCASE("testing on g0") {
-      std::vector<int> traversal0;
-      g0.bfs(0, traversal0);
-      CHECK(traversal0[0] == 0);
-      CHECK(traversal0.size() == 4);
-      std::sort(traversal0.begin(), traversal0.end());
-      CHECK(std::adjacent_find(traversal0.begin(), traversal0.end()) ==
-            traversal0.end());
+  SUBCASE("testing search algorithms") {
+    std::unordered_map<int, std::vector<int>> adjList3{
+        {0, {1, 2}}, {1, {0, 3}}, {2, {0, 5}}, {3, {1, 4}},
+        {4, {3}},    {5, {2, 6}}, {6, {5}}};
+    Graph g3{adjList3};
+
+    SUBCASE("testing bfs") {
+      SUBCASE("testing on g0") {
+        std::vector<int> traversal0;
+        g0.bfs(0, traversal0);
+        CHECK(traversal0[0] == 0);
+        CHECK(traversal0.size() == 4);
+        std::sort(traversal0.begin(), traversal0.end());
+        CHECK(std::adjacent_find(traversal0.begin(), traversal0.end()) ==
+              traversal0.end());
+      }
+
+      SUBCASE("testing on g1") {
+        std::vector<int> traversal1;
+        g1.bfs(1, traversal1);
+        CHECK(traversal1[0] == 1);
+        CHECK(traversal1.size() == 3);
+        std::sort(traversal1.begin(), traversal1.end());
+        CHECK(std::adjacent_find(traversal1.begin(), traversal1.end()) ==
+              traversal1.end());
+      }
+
+      SUBCASE("testing on g2") {
+        std::vector<int> traversal2;
+        g2.bfs(6, traversal2);
+        CHECK(traversal2[0] == 6);
+        CHECK(traversal2[1] == 5);
+        CHECK(traversal2[2] == 4);
+        CHECK(traversal2.size() == 7);
+        std::sort(traversal2.begin(), traversal2.end());
+        CHECK(std::adjacent_find(traversal2.begin(), traversal2.end()) ==
+              traversal2.end());
+      }
     }
 
-    SUBCASE("testing on g1") {
-      std::vector<int> traversal1;
-      g1.bfs(1, traversal1);
-      CHECK(traversal1[0] == 1);
-      CHECK(traversal1.size() == 3);
-      std::sort(traversal1.begin(), traversal1.end());
-      CHECK(std::adjacent_find(traversal1.begin(), traversal1.end()) ==
-            traversal1.end());
-    }
+    SUBCASE("testing dfs") {
+      SUBCASE("testing on g0") {
+        std::vector<int> traversal0;
+        g0.dfs(0, traversal0);
+        CHECK(traversal0[0] == 0);
+        CHECK(traversal0.size() == 4);
+        std::sort(traversal0.begin(), traversal0.end());
+        CHECK(std::adjacent_find(traversal0.begin(), traversal0.end()) ==
+              traversal0.end());
+      }
 
-    SUBCASE("testing on g2") {
-      std::vector<int> traversal2;
-      g2.bfs(6, traversal2);
-      CHECK(traversal2[0] == 6);
-      CHECK(traversal2[1] == 5);
-      CHECK(traversal2[2] == 4);
-      CHECK(traversal2.size() == 7);
-      std::sort(traversal2.begin(), traversal2.end());
-      CHECK(std::adjacent_find(traversal2.begin(), traversal2.end()) ==
-            traversal2.end());
+      SUBCASE("testing on g1") {
+        std::vector<int> traversal1;
+        g1.dfs(1, traversal1);
+        CHECK(traversal1[0] == 1);
+        CHECK(traversal1.size() == 3);
+        std::sort(traversal1.begin(), traversal1.end());
+        CHECK(std::adjacent_find(traversal1.begin(), traversal1.end()) ==
+              traversal1.end());
+      }
+
+      SUBCASE("testing on g2") {
+        std::vector<int> traversal2;
+        g2.dfs(6, traversal2);
+        CHECK(traversal2[0] == 6);
+        CHECK(traversal2[1] == 5);
+        CHECK(traversal2[2] == 4);
+        CHECK(traversal2.size() == 7);
+        std::sort(traversal2.begin(), traversal2.end());
+        CHECK(std::adjacent_find(traversal2.begin(), traversal2.end()) ==
+              traversal2.end());
+      }
     }
   }
 }

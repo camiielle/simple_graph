@@ -22,8 +22,9 @@ class Graph {
   int size() const { return adjList_.size(); }
   std::vector<int>& operator[](int index) { return adjList_[index]; }
   std::vector<int>& bfs(int const start,
-           std::vector<int>& traversal);  // breadth first search
-  void dfs();                             // depth first search
+                        std::vector<int>& traversal);  // breadth first search
+  std::vector<int>& dfs(int const start,
+                        std::vector<int>& traversal);  // depth first search
 };
 
 #endif
