@@ -25,15 +25,4 @@ class Graph {
   void DFS();  // depth first search
 };
 
-void removeElement(std::vector<int>::iterator const& element,
-                   std::vector<int>& vec);
-
-std::vector<std::vector<int>>& generateRandomEdges(
-    std::vector<std::vector<int>>& neighbors, int numOfNodes, int numOfEdges,
-    unsigned int seed);
-
-std::unordered_map<int, std::vector<int>>& fill(
-    std::unordered_map<int, std::vector<int>>& adjList, int numOfNodes,
-    int numOfEdges, unsigned int seed);
-
 #endif
