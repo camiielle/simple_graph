@@ -112,6 +112,20 @@ TEST_CASE("testing Graph") {
         CHECK(std::adjacent_find(traversal2.begin(), traversal2.end()) ==
               traversal2.end());
       }
+
+      SUBCASE("testing on g3") {
+        std::vector<int> traversal3;
+        g3.dfs(0, traversal3);
+        CHECK(traversal3[0] == 0);
+        CHECK(traversal3.size() == 7);
+        if (traversal3[1] == 1) {
+          CHECK(traversal3[2] == 3);
+          CHECK(traversal3[3] == 4);
+        } else {
+          CHECK(traversal3[2] == 5);
+          CHECK(traversal3[3] == 6);
+        }
+      }
     }
   }
 }
