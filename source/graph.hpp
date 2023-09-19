@@ -18,8 +18,6 @@ class Graph {
     assert(!(adjList_.empty()));
   }
 
-  // N.B. not risking narrowing with int as return type since parameter
-  // numOfNodes is an int
   int size() const { return adjList_.size(); }
   std::vector<int>& operator[](int index) { return adjList_[index]; }
   std::vector<int>& bfs(int const start,

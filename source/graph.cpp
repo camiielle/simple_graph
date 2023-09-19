@@ -4,9 +4,7 @@
 #include <queue>
 #include <stack>
 
-// defining BFS and DFS search algorithms
-
-// takes a filled graph, applies BFS algorithm returning the traversal
+// defining BFS and DFS search algorithms, as well as auxiliary print function
 
 std::vector<int>& Graph::bfs(int const start, std::vector<int>& traversal) {
   assert(traversal.empty());
@@ -31,8 +29,6 @@ std::vector<int>& Graph::bfs(int const start, std::vector<int>& traversal) {
 
   return traversal;
 }
-
-// takes a filled graph, applies DFS algorithm returning the traversal
 
 std::vector<int>& Graph::dfs(int const start, std::vector<int>& traversal) {
   assert(traversal.empty());
