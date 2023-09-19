@@ -41,8 +41,7 @@ std::vector<std::vector<int>>& generateRandomEdges(
     // adding i to the lists of its neighbors
     for (auto const& neighbor : neighbors[i]) {
       if (neighbor > i) {
-        auto& vec{neighbors[neighbor]};
-        vec.push_back(i);
+        neighbors[neighbor].push_back(i);
       }
     }
   }
