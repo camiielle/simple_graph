@@ -54,6 +54,11 @@ std::vector<int>& Graph::dfs(int const start, std::vector<int>& traversal) {
       }
     }
   }
-    return traversal;
+  return traversal;
+}
 
+void printTraversal(std::vector<int> const& traversal) {
+  for (int const& i : traversal) {
+    std::cout << i << "  ";
+  }
 }

@@ -2,6 +2,7 @@
 #define GRAPH_HPP
 
 #include <cassert>
+#include <iostream>
 #include <random>
 #include <unordered_map>
 #include <vector>
@@ -26,5 +27,7 @@ class Graph {
   std::vector<int>& dfs(int const start,
                         std::vector<int>& traversal);  // depth first search
 };
+
+void printTraversal(std::vector<int> const& traversal);
 
 #endif
