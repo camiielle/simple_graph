@@ -21,8 +21,9 @@ class Graph {
   // numOfNodes is an int
   int size() const { return adjList_.size(); }
   std::vector<int>& operator[](int index) { return adjList_[index]; }
-  void BFS();  // breadth first search
-  void DFS();  // depth first search
+  std::vector<int>& bfs(int const start,
+           std::vector<int>& traversal);  // breadth first search
+  void dfs();                             // depth first search
 };
 
 #endif
